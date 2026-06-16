@@ -1,17 +1,12 @@
 const diccionario = {
 
     "hola":"assets/gifs/hola.gif",
-
     "gracias":"assets/gifs/gracias.gif",
-
     "adios":"assets/gifs/adios.gif",
-
     "amigo":"assets/gifs/amigo.gif",
-
     "familia":"assets/gifs/familia.gif"
 
 };
-
 
 const alfabeto = {
 
@@ -41,5 +36,4 @@ const alfabeto = {
     "x":"assets/imagenes/x.png",
     "y":"assets/imagenes/y.png",
     "z":"assets/imagenes/z.png"
-
 };

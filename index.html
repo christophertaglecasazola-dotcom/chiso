@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Traductor de Texto a Señas</title>
 
-<link rel="stylesheet" href="css/estilos.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor de Texto a Señas</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
 
-<div class="contenedor">
+    <div class="contenedor">
 
-    <h1>🤟 Traductor de Texto a Señas</h1>
+        <h1>🤟 Traductor de Texto a Señas</h1>
 
-    <textarea
-        id="texto"
-        placeholder="Escribe una frase..."
-    ></textarea>
+        <textarea
+            id="texto"
+            placeholder="Escribe una frase..."
+        ></textarea>
 
-    <button onclick="traducirTexto()">
-        Traducir
-    </button>
+        <button
+            id="btnTraducir"
+            onclick="traducirTexto()">
+            Traducir
+        </button>
 
-    <div id="estado">
-        Listo
+        <div id="estado">
+            Listo
+        </div>
+
+        <div id="visor">
+            <img
+                id="imagenSeña"
+                src=""
+                alt="Seña">
+        </div>
+
     </div>
 
-    <div id="visor">
-        <img id="imagenSeña" src="" alt="">
-    </div>
-
-</div>
-
-<script src="js/diccionario.js"></script>
-<script src="js/animaciones.js"></script>
-<script src="js/traductor.js"></script>
+    <script src="js/diccionario.js"></script>
+    <script src="js/animaciones.js"></script>
+    <script src="js/traductor.js"></script>
 
 </body>
+
 </html>

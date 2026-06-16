@@ -1,4 +1,10 @@
+let traduciendo = false;
+
 async function traducirTexto(){
+
+    if(traduciendo){
+        return;
+    }
 
     const texto =
         document
@@ -8,38 +14,55 @@ async function traducirTexto(){
         .trim();
 
     if(texto === ""){
+
+        alert("Escribe una frase.");
+
         return;
     }
 
     const estado =
         document.getElementById("estado");
 
+    const boton =
+        document.getElementById("btnTraducir");
+
+    traduciendo = true;
+
+    boton.disabled = true;
+
     estado.innerHTML =
         "Traduciendo...";
 
     const palabras =
-        texto.split(" ");
+        texto.split(/\s+/);
 
     let secuencia = [];
 
-    for(let palabra of palabras){
+    for(const palabra of palabras){
 
         if(diccionario[palabra]){
 
-            secuencia.push(
-                diccionario[palabra]
-            );
+            secuencia.push({
 
-        }
-        else{
+                tipo:"gif",
 
-            for(let letra of palabra){
+                ruta:diccionario[palabra]
+
+            });
+
+        }else{
+
+            for(const letra of palabra){
 
                 if(alfabeto[letra]){
 
-                    secuencia.push(
-                        alfabeto[letra]
-                    );
+                    secuencia.push({
+
+                        tipo:"letra",
+
+                        ruta:alfabeto[letra]
+
+                    });
 
                 }
 
@@ -47,13 +70,20 @@ async function traducirTexto(){
 
         }
 
+        secuencia.push({
+
+            tipo:"espacio"
+
+        });
+
     }
 
-    await mostrarSecuencia(
-        secuencia
-    );
+    await mostrarSecuencia(secuencia);
 
     estado.innerHTML =
-        "Traducción completada";
+        "✅ Traducción completada";
 
+    boton.disabled = false;
+
+    traduciendo = false;
 }

@@ -6,18 +6,39 @@ function esperar(ms){
 
 }
 
-
 async function mostrarSecuencia(lista){
 
     const imagen =
         document.getElementById("imagenSeña");
 
-    for(let ruta of lista){
+    for(const item of lista){
 
-        imagen.src = ruta;
+        if(item.tipo === "espacio"){
 
-        await esperar(1500);
+            imagen.src = "";
+
+            await esperar(800);
+
+            continue;
+        }
+
+        imagen.src = "";
+
+        await esperar(50);
+
+        imagen.src = item.ruta;
+
+        if(item.tipo === "gif"){
+
+            await esperar(2500);
+
+        }else{
+
+            await esperar(1000);
+
+        }
 
     }
 
+    imagen.src = "";
 }
