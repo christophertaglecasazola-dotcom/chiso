@@ -15,14 +15,14 @@ async function mostrarSecuencia(lista){
 
         if(item.tipo === "espacio"){
 
-            imagen.src = "";
+            imagen.src = "assets/imagenes/espacio.png";
 
             await esperar(800);
 
             continue;
         }
 
-        imagen.src = "";
+        imagen.src = "assets/imagenes/espacio.png";
 
         await esperar(50);
 
@@ -40,5 +40,5 @@ async function mostrarSecuencia(lista){
 
     }
 
-    imagen.src = "";
+    imagen.src = "assets/imagenes/espacio.png";
 }
