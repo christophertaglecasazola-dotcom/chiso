@@ -35,5 +35,6 @@ const alfabeto = {
     "w":"assets/imagenes/w.png",
     "x":"assets/imagenes/x.png",
     "y":"assets/imagenes/y.png",
-    "z":"assets/imagenes/z.png"
+    "z":"assets/imagenes/z.png",
+    " ":"assets/imagenes/espacio.png"
 };
